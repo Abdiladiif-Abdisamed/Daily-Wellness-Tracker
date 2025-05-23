@@ -1,0 +1,1 @@
+console.log('Daily Wellness Tracker App Loaded');

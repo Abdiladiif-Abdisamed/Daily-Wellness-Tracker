@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Wellness Tracker</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        header, footer { background-color: #4CAF50; color: white; padding: 20px; text-align: center; }
+        nav a { margin: 0 15px; color: white; text-decoration: none; font-weight: bold; }
+        .hero { background: url('../images/hero.jpg') center/cover no-repeat; height: 300px; display: flex; justify-content: center; align-items: center; color: white; text-shadow: 1px 1px 3px black; font-size: 2rem; }
+        .section { padding: 40px 20px; text-align: center; }
+        .testimonial { font-style: italic; background-color: #f9f9f9; padding: 20px; margin: 20px auto; max-width: 600px; border-left: 5px solid #4CAF50; }
+        .contact-form input, .contact-form textarea { width: 80%; padding: 10px; margin: 10px 0; }
+        .contact-form button { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Daily Wellness Tracker</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pages/tracker.html">Tracker</a>
+            <a href="pages/stats.html">Stats</a>
+            <a href="pages/motivation.html">Motivation</a>
+            <a href="login.html">login</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div>Track Your Wellness, One Day at a Time</div>
+    </div>
+
+    <section class="section">
+        <h2>What Is This App?</h2>
+        <p>
+            Daily Wellness Tracker helps you stay on top of your health by tracking your sleep, water intake, exercise, and mood. Gain insights and improve your lifestyle with our simple and effective tool.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>Testimonials</h2>
+        <div class="testimonial">"This app changed how I manage my daily routine. I feel more energetic and aware." – Fatima A.</div>
+        <div class="testimonial">"Simple to use and very effective in building good habits." – Ahmed K.</div>
+    </section>
+
+    <section class="section contact-form">
+        <h2>Quick Contact</h2>
+        <p>Send us your feedback or questions!</p>
+        <form>
+            <input type="text" placeholder="Your Name" required><br>
+            <input type="email" placeholder="Your Email" required><br>
+            <textarea rows="4" placeholder="Your Message"></textarea><br>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Daily Wellness Tracker. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (!this.href.endsWith('index.html')) {
+                    e.preventDefault();
+                    window.location.href = this.getAttribute('href');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
