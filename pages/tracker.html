@@ -25,6 +25,7 @@
             <a href="stats.html">Stats</a>
             <a href="motivation.html">Motivation</a>
             <a href="login.html">login</a>
+
         </nav>
     </header>
 
@@ -49,39 +50,13 @@
         </form>
         <button id="clearDataBtn" class="clear-btn">Clear All Data</button>
     </section>
-
+    
     <footer>
         <p>&copy; 2025 Daily Wellness Tracker. All Rights Reserved.</p>
     </footer>
 
-    <script>
-    document.getElementById("wellnessForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-        const sleep = document.querySelector("input[placeholder='Hours Slept']").value;
-        const water = document.querySelector("input[placeholder='Liters of Water']").value;
-        const exercise = document.querySelector("input[placeholder='Exercise Type/Duration']").value;
-        const mood = document.querySelector("select").value;
-        const notes = document.querySelector("textarea").value;
-
-        const entry = {
-            date: new Date().toLocaleDateString(),
-            sleep, water, exercise, mood, notes
-        };
-
-        let wellnessData = JSON.parse(localStorage.getItem("wellnessData")) || [];
-        wellnessData.push(entry);
-        localStorage.setItem("wellnessData", JSON.stringify(wellnessData));
-
-        alert("Your entry has been saved!");
-        this.reset();
-    });
-
-    document.getElementById("clearDataBtn").addEventListener("click", function() {
-        if (confirm("Are you sure you want to delete all your wellness data?")) {
-            localStorage.removeItem("wellnessData");
-            alert("All wellness data has been cleared.");
-        }
-    });
+    <script src="../js/app.js">
+   
     </script>
 </body>
 </html>

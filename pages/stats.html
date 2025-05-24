@@ -24,6 +24,7 @@
             <a href="stats.html">Stats</a>
             <a href="motivation.html">Motivation</a>
             <a href="login.html">login</a>
+
         </nav>
     </header>
 
@@ -35,48 +36,14 @@
         <h2>Your Wellness Trends</h2>
         <canvas id="wellnessChart" width="400" height="200"></canvas>
     </section>
+    
 
     <footer>
         <p>&copy; 2025 Daily Wellness Tracker. All Rights Reserved.</p>
     </footer>
 
-    <script>
-    window.onload = function () {
-        const ctx = document.getElementById('wellnessChart').getContext('2d');
-        let wellnessData = JSON.parse(localStorage.getItem("wellnessData")) || [];
-
-        let labels = wellnessData.map(e => e.date);
-        let sleepData = wellnessData.map(e => Number(e.sleep));
-        let waterData = wellnessData.map(e => Number(e.water));
-
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [
-                    {
-                        label: 'Hours Slept',
-                        data: sleepData,
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        fill: false,
-                    },
-                    {
-                        label: 'Water Intake (L)',
-                        data: waterData,
-                        borderColor: 'rgba(54, 162, 235, 1)',
-                        fill: false,
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { position: 'top' },
-                    title: { display: true, text: 'Wellness Trends' }
-                }
-            }
-        });
-    };
+    <script src="../js/app.js">
+   
     </script>
 </body>
 </html>

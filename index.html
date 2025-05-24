@@ -24,7 +24,9 @@
             <a href="pages/tracker.html">Tracker</a>
             <a href="pages/stats.html">Stats</a>
             <a href="pages/motivation.html">Motivation</a>
-            <a href="login.html">login</a>
+            <a href="pages/login.html">login</a>
+                        <!-- <button class="btnLogout" style="display: none; border: 2px solid #fff ;color: #fff; padding: 10px; border-radius: 5px; background-color: #4CAF50; cursor: pointer;">logout</button> -->
+
         </nav>
     </header>
 
@@ -60,15 +62,8 @@
         <p>&copy; 2025 Daily Wellness Tracker. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (!this.href.endsWith('index.html')) {
-                    e.preventDefault();
-                    window.location.href = this.getAttribute('href');
-                }
-            });
-        });
+    <script src="./js/app.js">
+        
     </script>
 </body>
 </html>
