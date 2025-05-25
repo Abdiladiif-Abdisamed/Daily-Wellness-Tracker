@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Post Detail</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 20px; }
+    img { max-width: 100%; height: auto; border-radius: 6px; margin-bottom: 20px; }
+    h1 { color: #00796b; }
+    p { line-height: 1.6; color: #444; }
+    small { color: #777; }
+    a.back-link { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #00796b; }
+    a.back-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<a href="blog.html" class="back-link">&larr; Back to Blog</a>
+
+<h1 id="postTitle"></h1>
+<img id="postImage" src="" alt="">
+<small id="postDate"></small>
+<p id="postContent"></p>
+
+<script>
+  const posts = [
+    {
+      id: 'post1',
+      title: 'The Importance of a Balanced Diet',
+      image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80',
+      content: 'Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.',
+      date: 'May 23, 2025'
+    },
+    {
+      id: 'post2',
+      title: 'Benefits of Regular Exercise',
+      image: '../images/exercise.jpg',
+      content: 'Regular physical activity helps improve cardiovascular health, strengthens muscles, boosts mood, and reduces the risk of chronic diseases. Aim for at least 30 minutes of moderate exercise most days of the week.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.',
+      date: 'May 20, 2025'
+    },
+    {
+      id: 'post3',
+      title: 'Why Quality Sleep Matters',
+      image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
+      content: 'Quality sleep is essential for mental and physical well-being. It supports brain function, improves concentration, and helps repair the body. Adults should aim for 7-9 hours of restful sleep each night.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.Eating a balanced diet is crucial for maintaining good health. It provides the essential nutrients your body needs to function properly, boosts your immune system, and helps in managing weight effectivel.',
+      date: 'May 18, 2025'
+    }
+  ];
+
+  // Get post id from URL query params
+  const params = new URLSearchParams(window.location.search);
+  const postId = params.get('id');
+
+  const post = posts.find(p => p.id === postId);
+
+  if(post) {
+    document.getElementById('postTitle').textContent = post.title;
+    document.getElementById('postImage').src = post.image;
+    document.getElementById('postImage').alt = post.title;
+    document.getElementById('postDate').textContent = post.date;
+    document.getElementById('postContent').textContent = post.content;
+  } else {
+    document.body.innerHTML = '<p>Post not found.</p><a href="blog.html">Back to Blog</a>';
+  }
+</script>
+
+</body>
+</html>

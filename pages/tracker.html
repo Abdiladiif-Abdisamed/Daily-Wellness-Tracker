@@ -14,20 +14,31 @@
         form input, form select, form textarea { width: 80%; padding: 10px; margin: 10px 0; }
         button { padding: 10px 20px; margin-top: 10px; }
         .clear-btn { background-color: red; color: white; }
+        #dash{
+            display: none;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Daily Wellness Tracker</h1>
         <nav>
-            <a href="../index.html">Home</a>
+              <a href="../index.html">Home</a>
             <a href="tracker.html">Tracker</a>
-            <a href="stats.html">Stats</a>
+            <a href="blog.html">Blog</a>
             <a href="motivation.html">Motivation</a>
-            <a href="login.html">login</a>
+            <a href="login.html" id="changeLogin">login</a>
+             <a href="dashboard.html"  id="dash">Dashboard</a>
 
         </nav>
     </header>
+     <!-- <button id="authBtn">Login</button>
+
+<nav id="dashboardMenu" style="display:none;">
+  <a href="dashboard.html">Dashboard</a>
+  <a href="tracker.html">Tracker</a>
+  <a href="stats.html">Stats</a>
+</nav> -->
 
     <div class="hero">
         <div>Record Your Daily Wellness</div>
@@ -35,20 +46,19 @@
 
     <section class="section">
         <h2>Track Your Wellness Today</h2>
-        <form id="wellnessForm">
-            <input type="text" placeholder="Hours Slept" required><br>
-            <input type="number" placeholder="Liters of Water" required><br>
-            <input type="text" placeholder="Exercise Type/Duration"><br>
-            <select>
-                <option value="">Mood</option>
-                <option value="happy">Happy</option>
-                <option value="neutral">Neutral</option>
-                <option value="sad">Sad</option>
-            </select><br>
-            <textarea placeholder="Additional Notes"></textarea><br>
-            <button type="submit">Save Entry</button>
-        </form>
-        <button id="clearDataBtn" class="clear-btn">Clear All Data</button>
+       <form class="form-table">
+    <input type="date" id="date" required><br>
+    <input type="number" id="sleep" placeholder="Hours of Sleep" required><br>
+    <input type="number" id="water" placeholder="Water Intake (L)" required><br>
+    <input type="text" id="exercise" placeholder="Exercise Type" required><br>
+    <select id="mood">
+      <option value="happy">Happy</option>
+      <option value="neutral">Neutral</option>
+      <option value="sad">Sad</option>
+    </select><br>
+    <input type="text" id="diet" placeholder="Diet (e.g., Vegan, High Protein)" required><br>
+    <button onclick="addEntry()">Save Entry</button>
+  </form>
     </section>
     
     <footer>

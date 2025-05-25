@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Dashboard - Daily Wellness Tracker</title>
+  <style>
+    
+ body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        header, footer { background-color: #4CAF50; color: white; padding: 20px; text-align: center; }
+
+
+    h1,
+    h2 {
+      margin: 0 0 15px;
+      text-align: center;
+    }
+
+    .welcome {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      background: white;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    button.logout {
+      background-color: #d9534f;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      float: right;
+    }
+
+    button.logout:hover {
+      background-color: #c9302c;
+    }
+
+    nav a { margin: 0 15px; color: white; text-decoration: none; font-weight: bold; }
+        .hero { background: #4CAF50; height: 250px; display: flex; justify-content: center; align-items: center; color: white; font-size: 2rem; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Daily Wellness Tracker</h1>
+    <nav>   <a href="../index.html">Home</a>
+            <a href="tracker.html">Tracker</a>
+            <a href="stats.html">Stats</a>
+            <a href="motivation.html">Motivation</a>
+            <a href="login.html" id="changeLogin">logout</a>
+                        <a href="dashboard.html" style="display: none;">Dashboard</a>
+                      
+                      </nav>
+                          </header>
+
+
+    
+  </header>
+<div class="hero">
+   <div>Daily Wellness Tracker Dashboard</div>
+
+</div>
+
+
+  <table id="userInfoTable">
+    <tbody>
+      <!-- User info rows inserted here -->
+    </tbody>
+  </table>
+
+  <h2>Your Wellness Data</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Completed</th>
+       <th>Date</th>
+        <th>Hours of Sleep</th>
+        <th>Water Intake (L)</th>
+        <th>Exercise Type</th>
+        <th>Mood</th>
+        <th>Diet</th>
+        <th>Action</th>
+
+
+      </tr>
+    </thead>
+    <tbody id="trackingTable">
+      <!-- Table rows will be added here -->
+    </tbody>
+  </table>
+  <script src="../js/dashboard.js">
+
+  </script>
+
+</body>
+
+</html>
